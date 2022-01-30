@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <title>Temperature Readouts</title>
+    <meta name="author" content="Nathan Fritch">
+    <meta name="description" content="Internal temperature readouts">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span id="control-panel">
+            <button id="fetch-data-last-hour">
+                Last Hour
+            </button>
+            <button id="fetch-data-last-day">
+                Last Day
+            </button>
+            <button id="fetch-data-last-week">
+                Last Week
+            </button>
+        </span>
+        <div id="graph-output">
+        
+        </div>
+    </div>
+    <script>
+        (function () {
+            const svg = d3.select("#graph-output")
+                .append("svg")
+                    .attr("width", 800)
+                    .attr("height", 600);
+            
+            const lastHourButton = document.getElementById("fetch-data-last-hour");
+            lastHourButton.addEventListener("click", _e => {
+              console.log("fetch clicked!");    
+            });
+        })();
+    </script>
+</body>
+</html>
